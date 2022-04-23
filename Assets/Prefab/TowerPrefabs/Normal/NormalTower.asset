@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fbfb1f014c2224a9e8a2d4989674e8, type: 3}
+  m_Name: NormalTower
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 1270882730152136632, guid: 61448ad83e8b5c744b2be0338c9b1881, type: 3}
+  towerBasicHint: {fileID: 2016860527301882401, guid: 0f5ebd077e4be6447b84ef409c41d546, type: 3}
+  towerBasicModel: {fileID: 7450241584522953788, guid: ee429841417697b4bad89dd096cb0fd5, type: 3}
+  towerUpgradedHint: {fileID: 4582997703650550206, guid: 00ef67d21e632cf479d130a845b73952, type: 3}
+  towerUpgradedModel: {fileID: 6067951950533631350, guid: ab553f2f92bc43b468c4217e85563be2, type: 3}
+  towerType: 0
+  baseCost: 50
+  upgradeCost: 100
+  baseSellPrice: 40
+  upgradeSellPrice: 75
+  baseRadius: 2
+  upgradeRadius: 4
+  fireInterval: 0.1
+  baseDamage: 10
+  upgradeDamage: 50
+  baseDamageRadius: 0
+  upgradeDamageRadius: 0
+  baseDamageModifier: 0
+  upgradeDamageModifier: 0
+  baseDuration: 0
+  upgradeDuration: 0
+  baseEffectModifier: 0
+  upgradeEffectModifier: 0

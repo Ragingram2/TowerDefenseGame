@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fbfb1f014c2224a9e8a2d4989674e8, type: 3}
+  m_Name: AOEPreset
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 2862965538911555056, guid: 088a2675bf821c04abab8a6af0d26b60, type: 3}
+  towerBasicHint: {fileID: 9195950093585680584, guid: 45f7a00925c97b74ebdbc804d6bda1c1, type: 3}
+  towerBasicModel: {fileID: 1536232844584460195, guid: 62b43ba3d12d29a498fe6e519fae9f11, type: 3}
+  towerUpgradedHint: {fileID: 0}
+  towerUpgradedModel: {fileID: 0}
+  towerType: 1
+  baseCost: 100
+  upgradeCost: 200
+  baseSellPrice: 75
+  upgradeSellPrice: 150
+  baseRadius: 2
+  upgradeRadius: 4
+  fireInterval: 1
+  baseDamage: 4
+  upgradeDamage: 10
+  baseDamageRadius: 2
+  upgradeDamageRadius: 4
+  baseDamageModifier: 0.25
+  upgradeDamageModifier: 0.8
+  baseDuration: 0
+  upgradeDuration: 0
+  baseEffectModifier: 0
+  upgradeEffectModifier: 0
