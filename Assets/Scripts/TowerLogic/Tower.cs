@@ -6,7 +6,7 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     [HideInInspector] public TowerPreset preset;
-    [HideInInspector] public int towerId;
+    public int towerId;
     private TowerLogic tower;
     private GameObject self;
 
@@ -14,8 +14,14 @@ public class Tower : MonoBehaviour
 
     public void Start()
     {
+        Init();
+    }
+
+    public void Init()
+    {
         if (!preset.towerBasicModel)
             return;
+
 
         self = Instantiate(preset.towerBasicModel, transform, false);
 

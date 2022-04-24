@@ -11,5 +11,6 @@ public abstract class TowerLogic : MonoBehaviour
 
     void Start() => tower = GetComponent<Tower>();
 
+    public abstract void UpdateTarget();
     public abstract void Fire();
 }

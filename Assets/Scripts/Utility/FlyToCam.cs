@@ -15,18 +15,28 @@ public class FlyToCam : MonoBehaviour
     {
         if (flyToCam)
         {
-            GetComponent<Rigidbody>().AddForce((Camera.main.transform.position - transform.position).normalized * 10.0f);
+            transform.position = Vector3.MoveTowards(transform.position, Camera.main.transform.position, Time.deltaTime*10f);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Equals("Player"))
+        if (GameManager.IsGameMode(GameMode.Build) && other.gameObject.name.Equals("Player"))
         {
             GameManager.AddFunds(10);
             Destroy(gameObject);
         }
     }
 
-    void StartFlyToCam() => flyToCam = true;
+    private void OnDestroy()
+    {
+        GameManager.OnWaveEnd -= StartFlyToCam;
+    }
+
+    void StartFlyToCam()
+    {
+        flyToCam = true;
+        GetComponent<Rigidbody>().useGravity = false;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+    }
 }

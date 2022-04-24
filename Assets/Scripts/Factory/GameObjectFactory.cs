@@ -6,7 +6,7 @@ public abstract class GameObjectFactory<T> : UnityEngine.Object where T : Script
 {
     public abstract GameObject CreateInstance(T preset);
 }
-
+//Factory
 public class EnemyFactory : GameObjectFactory<Enemy>
 {
     public override GameObject CreateInstance(Enemy preset)

@@ -12,6 +12,4 @@ public class Enemy : ScriptableObject
     public float damage;
     public float speed;
     public Vector2 moneyRange;
-
-    //public GameObject deathEffect;
 }

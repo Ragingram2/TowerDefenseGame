@@ -54,8 +54,8 @@ public class GameManager : MonoBehaviour
     private static int spawnerCount;
     private static int finishedSpawners = 0;
 
-    private bool waveUpdating = false;
-    private bool waveStart = false;
+    public static bool waveUpdating = false;
+    private static bool waveStart = false;
 
     private float waveTime = 0.0f;
 
@@ -76,13 +76,12 @@ public class GameManager : MonoBehaviour
     #region Updates
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Mouse1))
             SetBuildMode(BuildMode.None);
-
+        //FSM
         switch (currentGameMode)
         {
             case GameMode.Build:
-                BuildUpdate();
                 break;
             case GameMode.StartOfWave:
                 OnWaveStart();
@@ -102,13 +101,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void BuildUpdate()
+    public void WaveUpdate()
     {
-
-    }
-
-    void WaveUpdate()
-    {
+        //Observer
         if (waveStart)
         {
             waveStart = false;
@@ -128,7 +123,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator Invoke(float interval, Action action)
+    public static IEnumerator Invoke(float interval, Action action)
     {
         while (waveUpdating)
         {
@@ -147,23 +142,25 @@ public class GameManager : MonoBehaviour
         RegisterTower(tower);
         return go;
     }
-    public static Tower UpgradeTower(int towerId)
+    public static Tower UpgradeTower(int id)
     {
-        money -= GetTowerUpgradeCost(towers[towerId].preset.towerType);
-        towers[towerId].Upgrade();
-        return towers[towerId];
+        money -= GetTowerUpgradeCost(towers[id].preset.towerType);
+        towers[id].Upgrade();
+        return towers[id];
     }
-    public static void SellTower(int towerID)
+    public static void SellTower(int id)
     {
-        if (towers[towerId].isUpgraded)
-            money += GetTowerUpgradeSellPrice(towers[towerId].preset.towerType);
+        if (towers[id].isUpgraded)
+            money += GetTowerUpgradeSellPrice(towers[id].preset.towerType);
         else
-            money += GetTowerSellPrice(towers[towerId].preset.towerType);
+            money += GetTowerSellPrice(towers[id].preset.towerType);
 
-        Destroy(towers[towerId].gameObject);
-        UnregisterTower(towerID);
+        var go = towers[id].gameObject;
+        UnregisterTower(id);
+        Destroy(go);
     }
-    public static Tower GetTower(int towerID) => towers.ContainsKey(towerID) ? towers[towerId] : null;
+    public static Tower GetTower(int id) => towers.ContainsKey(id) ? towers[id] : null;
+    //Observer
     public static void RegisterTower(Tower tower)
     {
         if (!processes.ContainsKey(towerPresets[tower.preset.towerType].fireInterval))
@@ -172,12 +169,13 @@ public class GameManager : MonoBehaviour
         towers.Add(++towerId, tower);
         tower.towerId = towerId;
     }
-    public static void UnregisterTower(int towerId)
+    //Observer
+    public static void UnregisterTower(int id)
     {
-        if (processes.ContainsKey(towerPresets[towers[towerId].preset.towerType].fireInterval))
+        if (processes.ContainsKey(towerPresets[towers[id].preset.towerType].fireInterval))
         {
-            processes[towerPresets[towers[towerId].preset.towerType].fireInterval].Remove(towers[towerId].Fire);
-            towers.Remove(towerId);
+            processes[towerPresets[towers[id].preset.towerType].fireInterval].Remove(towers[id].Fire);
+            towers.Remove(id);
         }
     }
 

@@ -93,7 +93,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 210
-    height: 539
+    height: 538
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
@@ -117,9 +117,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 539
+    y: 538
     width: 1283
-    height: 370
+    height: 371
   m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 12}
@@ -245,7 +245,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1283
-    height: 539
+    height: 538
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
@@ -268,7 +268,7 @@ MonoBehaviour:
     x: 210
     y: 0
     width: 1073
-    height: 539
+    height: 538
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
@@ -298,20 +298,20 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: -1680
-    y: 643
+    y: 642
     width: 1282
-    height: 349
+    height: 350
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_Spl:
-    ID: 109
+    ID: 104
     splitterInitialOffset: 237
     currentActiveSplitter: -1
     realSizes:
     - 160
-    - 119
+    - 120
     relativeSizes:
     - 0.57191783
     - 0.42808217
@@ -321,7 +321,7 @@ MonoBehaviour:
     maxSizes:
     - 0
     - 0
-    lastTotalSize: 279
+    lastTotalSize: 280
     splitSize: 6
     xOffset: 0
     m_Version: 1
@@ -337,9 +337,9 @@ MonoBehaviour:
       uniqueId: '[TowerDefenseGame][suite]'
       name: TowerDefenseGame
       fullName: TowerDefenseGame
-      resultStatus: 1
-      duration: 0.4797061
-      messages: 
+      resultStatus: 2
+      duration: 0.590533
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -353,9 +353,9 @@ MonoBehaviour:
       uniqueId: '[Tests.dll][suite]'
       name: Tests.dll
       fullName: D:/Repos/TowerDefenseGame/Library/ScriptAssemblies/Tests.dll
-      resultStatus: 1
-      duration: 0.1368279
-      messages: 
+      resultStatus: 2
+      duration: 0.19227
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -369,9 +369,9 @@ MonoBehaviour:
       uniqueId: Tests.dll/[Tests][suite]
       name: Tests
       fullName: Tests
-      resultStatus: 1
-      duration: 0.1231986
-      messages: 
+      resultStatus: 2
+      duration: 0.1796078
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
       name: BuildModeTests
       fullName: Tests.BuildModeTests
       resultStatus: 1
-      duration: 0.0511297
+      duration: 0.0695904
       messages: 
       output: 
       stacktrace: 
@@ -402,7 +402,7 @@ MonoBehaviour:
       name: TestBuildMode
       fullName: Tests.BuildModeTests.TestBuildMode
       resultStatus: 1
-      duration: 0.0237717
+      duration: 0.0299462
       messages: 
       output: 'BuildMode Set: None
 
@@ -427,9 +427,9 @@ MonoBehaviour:
       uniqueId: Tests.dll/Tests/[Tests][Tests.EnemyTests][suite]
       name: EnemyTests
       fullName: Tests.EnemyTests
-      resultStatus: 1
-      duration: 0.0281334
-      messages: 
+      resultStatus: 2
+      duration: 0.0400025
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -444,9 +444,11 @@ MonoBehaviour:
       name: TestEnemyCreation
       fullName: Tests.EnemyTests.TestEnemyCreation
       resultStatus: 1
-      duration: 0.0073585
+      duration: 0.0082431
       messages: 
-      output: 
+      output: ' (Enemy)
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -460,11 +462,24 @@ MonoBehaviour:
       uniqueId: Tests.dll/Tests/EnemyTests/[Tests][Tests.EnemyTests.TestEnemyDestruction]
       name: TestEnemyDestruction
       fullName: Tests.EnemyTests.TestEnemyDestruction
-      resultStatus: 1
-      duration: 0.015751
-      messages: 
-      output: 
-      stacktrace: 
+      resultStatus: 2
+      duration: 0.0262152
+      messages: 'UnityEngine.MissingReferenceException : The object of type ''EnemyLogic''
+        has been destroyed but you are still trying to access it.
+
+        Your script
+        should either check if it is null or you should not destroy the object.'
+      output: ' (Enemy)
+
+'
+      stacktrace: "  at (wrapper managed-to-native) UnityEngine.Component.get_gameObject(UnityEngine.Component)\r\n 
+        at EnemyLogic.OnDeath () [0x00073] in D:\\Repos\\TowerDefenseGame\\Assets\\Scripts\\EnemyLogic\\EnemyLogic.cs:69
+        \r\n  at EnemyLogic.DealDamage (System.Int32 num) [0x00053] in D:\\Repos\\TowerDefenseGame\\Assets\\Scripts\\EnemyLogic\\EnemyLogic.cs:46
+        \r\n  at Tests.EnemyTests.TestEnemyDestruction () [0x00083] in D:\\Repos\\TowerDefenseGame\\Assets\\Tests\\TestSuite.cs:222
+        \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
+        at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
+        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters,
+        System.Globalization.CultureInfo culture) [0x0006a] in <6073cf49ed704e958b8a66d540dea948>:0 "
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -478,7 +493,7 @@ MonoBehaviour:
       name: GameModeTests
       fullName: Tests.GameModeTests
       resultStatus: 1
-      duration: 0.0116394
+      duration: 0.0098977
       messages: 
       output: 'NullReferenceException: Object reference not set to an instance of
         an object
@@ -500,7 +515,7 @@ MonoBehaviour:
       name: TestGameMode
       fullName: Tests.GameModeTests.TestGameMode
       resultStatus: 1
-      duration: 0.0029191
+      duration: 0.0027135
       messages: 
       output: 'GameMode Set: Build
 
@@ -525,9 +540,9 @@ MonoBehaviour:
       uniqueId: Tests.dll/Tests/[Tests][Tests.TowerTests][suite]
       name: TowerTests
       fullName: Tests.TowerTests
-      resultStatus: 1
-      duration: 0.0262553
-      messages: 
+      resultStatus: 2
+      duration: 0.0543346
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -542,9 +557,11 @@ MonoBehaviour:
       name: TestTowerCreation
       fullName: Tests.TowerTests.TestTowerCreation
       resultStatus: 1
-      duration: 0.0036314
+      duration: 0.0059486
       messages: 
-      output: 
+      output: ' (TowerPreset)
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -558,11 +575,16 @@ MonoBehaviour:
       uniqueId: Tests.dll/Tests/TowerTests/[Tests][Tests.TowerTests.TestTowerFire]
       name: TestTowerFire
       fullName: Tests.TowerTests.TestTowerFire
-      resultStatus: 1
-      duration: 0.0007171
-      messages: 
-      output: 
-      stacktrace: 
+      resultStatus: 2
+      duration: 0.0253825
+      messages: "  Enemy was not dealt damage\r\n  Expected: less than 100.0f\r\n 
+        But was:  100.0f\r\n"
+      output: " (TowerPreset)\r\n (Enemy)\r\nInvoking\r\nWe will now wait for 0 seconds\r\nAbout
+        to fire\r\nFiring\r\nNullReferenceException: Object reference not set to
+        an instance of an object\r\n"
+      stacktrace: 'at Tests.TowerTests.TestTowerFire () [0x0010d] in D:\Repos\TowerDefenseGame\Assets\Tests\TestSuite.cs:175
+
+'
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -576,9 +598,11 @@ MonoBehaviour:
       name: TestTowerPurchase
       fullName: Tests.TowerTests.TestTowerPurchase
       resultStatus: 1
-      duration: 0.0045094
+      duration: 0.0026999
       messages: 
-      output: 
+      output: ' (TowerPreset)
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -593,9 +617,11 @@ MonoBehaviour:
       name: TestTowerRegistration
       fullName: Tests.TowerTests.TestTowerRegistration
       resultStatus: 1
-      duration: 0.0009763
+      duration: 0.0015204
       messages: 
-      output: 
+      output: ' (TowerPreset)
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -610,9 +636,11 @@ MonoBehaviour:
       name: TestTowerSell
       fullName: Tests.TowerTests.TestTowerSell
       resultStatus: 1
-      duration: 0.0015071
+      duration: 0.0021977
       messages: 
-      output: 
+      output: ' (TowerPreset)
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -627,9 +655,11 @@ MonoBehaviour:
       name: TestTowerUpgrade
       fullName: Tests.TowerTests.TestTowerUpgrade
       resultStatus: 1
-      duration: 0.0016679
+      duration: 0.0028817
       messages: 
-      output: 
+      output: ' (TowerPreset)
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -639,13 +669,19 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: Tests.dll/Tests/[Tests][Tests.TowerTests][suite]
-    m_ResultText: TestEnemyDestruction (0.016s)
-    m_ResultStacktrace: 
+    m_ResultText: "TestTowerFire (0.025s)\n---\nEnemy was not dealt damage\r\n  Expected:
+      less than 100.0f\r\n  But was:  100.0f\n---\nat Tests.TowerTests.TestTowerFire
+      () [0x0010d] in D:\\Repos\\TowerDefenseGame\\Assets\\Tests\\TestSuite.cs:175\n---\n(TowerPreset)\r\n
+      (Enemy)\r\nInvoking\r\nWe will now wait for 0 seconds\r\nAbout to fire\r\nFiring\r\nNullReferenceException:
+      Object reference not set to an instance of an object"
+    m_ResultStacktrace: 'at Tests.TowerTests.TestTowerFire () [0x0010d] in D:\Repos\TowerDefenseGame\Assets\Tests\TestSuite.cs:175
+
+'
     m_TestListState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6faa1aa1
-      m_LastClickedID: -1592087953
-      m_ExpandedIDs: 0bc8228c899391c1e557abf7a7043c128359db41ffffff7f
+      scrollPos: {x: 0, y: 92}
+      m_SelectedIDs: 343f0333
+      m_LastClickedID: 855850804
+      m_ExpandedIDs: 7c44c28a0bc8228cf22396ad899391c1e557abf7a7043c128359db41ffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -743,10 +779,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -1680
-    y: 643
-    width: 1282
-    height: 349
+    x: 0
+    y: 628
+    width: 1465
+    height: 363
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -764,22 +800,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefab/Enemies
+    - Assets/Scripts/TowerLogic
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefab/Enemies
+  - Assets/Scripts/TowerLogic
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Repos\TowerDefenseGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d8430200
-    m_LastClickedID: 148440
-    m_ExpandedIDs: 000000005a0d01008c0d010000ca9a3b
+    scrollPos: {x: 0, y: 29}
+    m_SelectedIDs: be0d0100
+    m_LastClickedID: 69054
+    m_ExpandedIDs: 000000005a0d0100940d01009a0d010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -927,7 +963,7 @@ MonoBehaviour:
     x: -1680
     y: 104
     width: 209
-    height: 518
+    height: 517
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -937,7 +973,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 2446efffd046efffb24defff4832f0fff432f0ff7a39f0ff4e1bf1fffa1bf1ff8e22f1ff5c04f2ff0805f2ff860bf2ff70edf2ff1ceef2ffb0f4f2ff48d6f3fff4d6f3ff68ddf3ff1ec0f4ffcac0f4ff3ec7f4ffbaaaf5ff66abf5ffdab1f5ff1c93f6ffc893f6ff3c9af6ff6680f7ff1281f7ff9c87f7ffe26df8ff8e6ef8ff0275f8ff3e5cf9ffea5cf9ff8063f9ff2847faffd447faff504efaff4832fbfff432fbff8839fbff6a1bfcff161cfcff9222fcff280dfdffd40dfdff6614fdff8c19feff381afefff61ffeffc201ffff6e02ffff3408ffff30fbffff
+      m_ExpandedIDs: 1ab8e8ffc6b8e8ff82c0e8ffc0a6e9ff6ca7e9ff1cafe9ff4e91eafff491eaffce92eaff467eebfff27eebffa286ebffea68ecff9669ecff5c71ecffd256edff7e57edff2e5fedff5455eeff0056eeffbc5deeff203fefffcc3fefffa047efff0a2bf0ffb62bf0ff6033f0ff0a17f1ffb617f1ff621ff1ffba05f2ff6606f2ffe20df2ff0ef4f2ffbaf4f2ff42fcf2ff6adef3ff16dff3ffc2e6f3ff3ccbf4ffe8cbf4ff88d3f4ff5eb6f5ff0ab7f5ff92bef5ffbea5f6ff6aa6f6ff2caef6ffc292f7ff6e93f7ff009bf7ffa47ef8ff507ff8ffee86f8ff5a6af9ff066bf9ff8272f9ff5655faff0256faffb85dfaff9a3ffbff4640fbffda47fbff342bfcffe02bfcff6833fcff2616fdffd216fdff721efdffe204feff8e05feff020dfeff42effeffeeeffeff66f7feff30fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -984,7 +1020,7 @@ MonoBehaviour:
     x: -1470
     y: 104
     width: 1071
-    height: 518
+    height: 517
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1341,10 +1377,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -1470
-    y: 104
-    width: 1071
-    height: 518
+    x: 240
+    y: 73
+    width: 1224
+    height: 534
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1355,7 +1391,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1071, y: 497}
+  m_TargetSize: {x: 1224, y: 513}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -1370,10 +1406,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -535.5
-    m_HBaseRangeMax: 535.5
-    m_VBaseRangeMin: -248.5
-    m_VBaseRangeMax: 248.5
+    m_HBaseRangeMin: -612
+    m_HBaseRangeMax: 612
+    m_VBaseRangeMin: -256.5
+    m_VBaseRangeMax: 256.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1391,23 +1427,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1071
-      height: 497
+      width: 1224
+      height: 513
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 535.5, y: 248.5}
+    m_Translation: {x: 612, y: 256.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -535.5
-      y: -248.5
-      width: 1071
-      height: 497
+      x: -612
+      y: -256.5
+      width: 1224
+      height: 513
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1071, y: 518}
+  m_LastWindowPixelSize: {x: 1224, y: 534}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -1433,10 +1469,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -1680
-    y: 643
-    width: 1282
-    height: 349
+    x: 0
+    y: 628
+    width: 1465
+    height: 363
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default

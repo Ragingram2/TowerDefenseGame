@@ -10,6 +10,11 @@ public class NormalTower : TowerLogic
 
     void Update()
     {
+        UpdateTarget();
+    }
+
+    public override void UpdateTarget()
+    {
         GetComponent<SphereCollider>().radius = radius;
 
         if (targets == null || targets.Count < 1)
@@ -24,7 +29,7 @@ public class NormalTower : TowerLogic
 
         target = targets[0];
 
-        transform.LookAt(target.transform.position - new Vector3(0.0f, 0.5f, 0.0f));
+        transform.LookAt(target.transform.position - new Vector3(0.0f, 0.25f, 0.0f));
     }
 
     void OnTriggerEnter(Collider other)
@@ -51,7 +56,6 @@ public class NormalTower : TowerLogic
         radius = tower.isUpgraded ? preset.upgradeRadius : preset.baseRadius;
         if (!target)
             return;
-
 
         target.GetComponent<EnemyLogic>().DealDamage(damage);
         gameObject.GetComponentInChildren<Launcher>()?.Fire();

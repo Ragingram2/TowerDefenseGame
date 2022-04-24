@@ -25,8 +25,8 @@ MonoBehaviour:
   baseRadius: 2
   upgradeRadius: 4
   fireInterval: 0.1
-  baseDamage: 10
-  upgradeDamage: 50
+  baseDamage: 5
+  upgradeDamage: 10
   baseDamageRadius: 0
   upgradeDamageRadius: 0
   baseDamageModifier: 0

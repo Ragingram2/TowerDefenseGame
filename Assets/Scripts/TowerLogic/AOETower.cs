@@ -5,12 +5,17 @@ using UnityEngine;
 public class AOETower : TowerLogic
 {
     private GameObject target;
-    int damage;
-    int damageRadius;
-    float damageMod;
-    int radius;
+    private int damage;
+    private int damageRadius;
+    private float damageMod;
+    private int radius;
 
     void Update()
+    {
+        UpdateTarget();
+    }
+
+    public override void UpdateTarget()
     {
         GetComponent<SphereCollider>().radius = radius;
         if (targets == null || targets.Count < 1)

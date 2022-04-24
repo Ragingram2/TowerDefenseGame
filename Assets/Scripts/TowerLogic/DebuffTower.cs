@@ -10,6 +10,11 @@ public class DebuffTower : TowerLogic
 
     private void Update()
     {
+        UpdateTarget();
+    }
+
+    public override void UpdateTarget()
+    {
         GetComponent<SphereCollider>().radius = radius;
     }
 

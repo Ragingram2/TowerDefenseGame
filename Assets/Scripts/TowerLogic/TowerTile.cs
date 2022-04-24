@@ -130,7 +130,8 @@ public class TowerTile : MonoBehaviour
     {
         if (GameManager.HasEnoughMoney(type))
         {
-            GameManager.UpgradeTower(GetComponentInChildren<Tower>().towerId);
+            int id = GetComponentInChildren<Tower>().towerId;
+            GameManager.UpgradeTower(id);
             gameObject.tag = "Upgraded";
         }
         else
@@ -154,7 +155,8 @@ public class TowerTile : MonoBehaviour
 
     void Sell()
     {
-        GameManager.SellTower(GetComponentInChildren<Tower>().towerId);
+        int id = GetComponentInChildren<Tower>().towerId;
+        GameManager.SellTower(id);
         gameObject.tag = "Buildable";
         type = TowerType.None;
 

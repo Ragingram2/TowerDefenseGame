@@ -15,6 +15,7 @@ public class EnemySpawner : MonoBehaviour
     private int enemiesSpawned = 0;
     private EnemyFactory enemyFactory;
     private List<Enemy> enemies;
+    private Wave currentWave;
     private void Start()
     {
         GameManager.OnWaveStart += StartSpawning;
@@ -22,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
     }
     public void Update()
     {
+        currentWave = waves[GameManager.WaveNumber];
         if (GameManager.IsGameMode(GameMode.WaveInProgress))
         {
             if (enemies != null && enemiesSpawned >= enemies.Count)
@@ -30,21 +32,23 @@ public class EnemySpawner : MonoBehaviour
         }
         else if (GameManager.IsGameMode(GameMode.Build))
         {
-            if (waves[GameManager.WaveNumber] != null)
+            if (currentWave != null)
                 GetComponent<Indicator>().Show(new Vector3(0, 1.0f, 0.0f));
         }
     }
 
     public void StartSpawning()
     {
-        if (GameManager.WaveNumber >= waves.Count)
-            return;
-
-        Debug.Log("StartSpawning");
         enemyFactory = new EnemyFactory();
 
         if (waves[GameManager.WaveNumber] != null)
-            enemies = waves[GameManager.WaveNumber].enemies;
+            currentWave = waves[GameManager.WaveNumber];
+        else if(GameManager.WaveNumber >= waves.Count)
+            currentWave = waves[UnityEngine.Random.Range(0,waves.Count)];
+            
+
+        if(currentWave != null)
+            enemies = currentWave.enemies;
         else
         {
             StopSpawning();
@@ -60,7 +64,6 @@ public class EnemySpawner : MonoBehaviour
 
     public void StopSpawning()
     {
-        Debug.Log("Stopped Spawning");
         OnStoppedSpawning?.Invoke();
         enemies = null;
         StopCoroutine(RepeatUntil());

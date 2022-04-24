@@ -18,6 +18,11 @@ public class EnemyLogic : MonoBehaviour
 
     public void Start()
     {
+        Init();
+    }
+
+    public void Init()
+    {
         agent = GetComponent<NavMeshAgent>();
         if (agent)
         {
