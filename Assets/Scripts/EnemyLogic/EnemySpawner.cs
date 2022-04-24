@@ -23,7 +23,11 @@ public class EnemySpawner : MonoBehaviour
     }
     public void Update()
     {
-        currentWave = waves[GameManager.WaveNumber];
+        if (waves[GameManager.WaveNumber] != null)
+            currentWave = waves[GameManager.WaveNumber];
+        else if (GameManager.WaveNumber >= waves.Count)
+            currentWave = waves[UnityEngine.Random.Range(0, waves.Count)];
+
         if (GameManager.IsGameMode(GameMode.WaveInProgress))
         {
             if (enemies != null && enemiesSpawned >= enemies.Count)
@@ -40,12 +44,6 @@ public class EnemySpawner : MonoBehaviour
     public void StartSpawning()
     {
         enemyFactory = new EnemyFactory();
-
-        if (waves[GameManager.WaveNumber] != null)
-            currentWave = waves[GameManager.WaveNumber];
-        else if(GameManager.WaveNumber >= waves.Count)
-            currentWave = waves[UnityEngine.Random.Range(0,waves.Count)];
-            
 
         if(currentWave != null)
             enemies = currentWave.enemies;
