@@ -15,8 +15,8 @@ MonoBehaviour:
   towerPrefab: {fileID: 2862965538911555056, guid: 088a2675bf821c04abab8a6af0d26b60, type: 3}
   towerBasicHint: {fileID: 9195950093585680584, guid: 45f7a00925c97b74ebdbc804d6bda1c1, type: 3}
   towerBasicModel: {fileID: 1536232844584460195, guid: 62b43ba3d12d29a498fe6e519fae9f11, type: 3}
-  towerUpgradedHint: {fileID: 0}
-  towerUpgradedModel: {fileID: 0}
+  towerUpgradedHint: {fileID: 2096929833990363139, guid: 066f23652a7ecfa41951b41df389e4a9, type: 3}
+  towerUpgradedModel: {fileID: 5555077665159451203, guid: a37b71cdec31b1a41a06c1d49d6847ca, type: 3}
   towerType: 1
   baseCost: 100
   upgradeCost: 200
@@ -25,8 +25,8 @@ MonoBehaviour:
   baseRadius: 2
   upgradeRadius: 4
   fireInterval: 1
-  baseDamage: 4
-  upgradeDamage: 10
+  baseDamage: 10
+  upgradeDamage: 20
   baseDamageRadius: 2
   upgradeDamageRadius: 4
   baseDamageModifier: 0.25

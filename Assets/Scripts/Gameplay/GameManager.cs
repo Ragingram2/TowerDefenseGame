@@ -57,14 +57,13 @@ public class GameManager : MonoBehaviour
     public static bool waveUpdating = false;
     private static bool waveStart = false;
 
-    private float waveTime = 0.0f;
-
     private static int towerId = -1;
 
     #region Initialization
     void Start()
     {
         EnemySpawner.OnStoppedSpawning += SpawnerStopped;
+        //GameManager.OnWaveStart += TowerUpdate;
         spawnerCount = FindObjectsOfType<EnemySpawner>().Length;
         foreach (prefabKVP kvp in towerPresetSO.presets)
         {
@@ -94,7 +93,6 @@ public class GameManager : MonoBehaviour
                 WaveUpdate();
                 break;
             case GameMode.EndOfWave:
-                waveTime = 0.0f;
                 OnWaveEnd();
                 SetGameMode(GameMode.Build);
                 break;
@@ -103,7 +101,6 @@ public class GameManager : MonoBehaviour
 
     public void WaveUpdate()
     {
-        //Observer
         if (waveStart)
         {
             waveStart = false;
@@ -120,6 +117,18 @@ public class GameManager : MonoBehaviour
         {
             SetGameMode(GameMode.EndOfWave);
             waveUpdating = false;
+        }
+    }
+
+    public void TowerUpdate()
+    {
+        //Observer
+        foreach (float timeBuffer in processes.Keys)
+        {
+            foreach (Action fire in processes[timeBuffer])
+            {
+                StartCoroutine(Invoke(timeBuffer, fire));
+            }
         }
     }
 
